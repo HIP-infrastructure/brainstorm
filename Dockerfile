@@ -22,7 +22,7 @@ RUN apt-get update && \
     #unzip -q -d ./install brainstorm_${APP_VERSION}.zip && \
     #rm -rf brainstormi_${APP_VERSION}.zip
     unzip -q -d ./install brainstorm_*.zip && \
-    rm -rf brainstorm_*.zip && \
+    rm brainstorm_*.zip && \
     apt-get remove -y --purge curl unzip && \
     apt-get autoremove -y --purge && \
     apt-get clean && \
