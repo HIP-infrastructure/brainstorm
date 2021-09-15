@@ -29,7 +29,7 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 ENV APP_SHELL="no"
-ENV APP_CMD="/apps/brainstorm/install/brainstorm3/bin/R2020a/brainstorm3.command /usr/local/MATLAB/MATLAB_Runtime/v98"
+ENV APP_CMD="/apps/${APP_NAME}/install/brainstorm3/bin/R2020a/brainstorm3.command /usr/local/MATLAB/MATLAB_Runtime/v98"
 ENV PROCESS_NAME="brainstorm3.jar"
 ENV DIR_ARRAY="brainstorm_db .brainstorm"
 #ENV DIR_ARRAY="brainstorm_db .brainstorm .mcrCache9.8"
