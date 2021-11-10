@@ -31,8 +31,9 @@ RUN apt-get update && \
 ENV APP_SHELL="no"
 ENV APP_CMD="/apps/${APP_NAME}/install/brainstorm3/bin/R2020a/brainstorm3.command /usr/local/MATLAB/MATLAB_Runtime/v98"
 ENV PROCESS_NAME="brainstorm3.jar"
-ENV DIR_ARRAY="brainstorm_db .brainstorm"
-#ENV DIR_ARRAY="brainstorm_db .brainstorm .mcrCache9.8"
+ENV APP_DATA_DIR_ARRAY="brainstorm_db .brainstorm"
+#ENV APP_DATA_DIR_ARRAY="brainstorm_db .brainstorm .mcrCache9.8"
+ENV DATA_DIR_ARRAY=""
 
 HEALTHCHECK --interval=10s --timeout=10s --retries=5 --start-period=30s \
   CMD sh -c "/apps/${APP_NAME}/scripts/process-healthcheck.sh \
