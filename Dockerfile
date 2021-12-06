@@ -16,8 +16,8 @@ RUN apt-get update && \
     apt-get upgrade -y && \
     apt-get install --no-install-recommends -y \ 
     curl unzip default-jre && \
-    #curl -J -O https://neuroimage.usc.edu/bst/download.php?file=brainstorm_${APP_VERSION}.zip && \
-    curl -J -O http://neuroimage.usc.edu/bst/getupdate.php?c=UbsM09  && \
+    #curl -J# -O https://neuroimage.usc.edu/bst/download.php?file=brainstorm_${APP_VERSION}.zip && \
+    curl -J# -O http://neuroimage.usc.edu/bst/getupdate.php?c=UbsM09  && \
     mkdir ./install && \
     #unzip -q -d ./install brainstorm_${APP_VERSION}.zip && \
     #rm -rf brainstormi_${APP_VERSION}.zip
