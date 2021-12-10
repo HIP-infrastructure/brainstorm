@@ -1,5 +1,5 @@
 ARG CI_REGISTRY_IMAGE
-FROM ${CI_REGISTRY_IMAGE}/matlab-runtime:R2020a_u7
+FROM ${CI_REGISTRY_IMAGE}/matlab-runtime:R2021a_u5
 LABEL maintainer="nathalie.casati@chuv.ch"
 
 ARG DEBIAN_FRONTEND=noninteractive
@@ -16,20 +16,20 @@ RUN apt-get update && \
     apt-get upgrade -y && \
     apt-get install --no-install-recommends -y \ 
     curl unzip default-jre && \
-    #curl -J# -O https://neuroimage.usc.edu/bst/download.php?file=brainstorm_${APP_VERSION}.zip && \
-    curl -J# -O http://neuroimage.usc.edu/bst/getupdate.php?c=UbsM09  && \
+    curl -J# -O http://neuroimage.usc.edu/bst/getupdate.php?d=bst_bin_R2021a_${APP_VERSION}.zip && \
+    #curl -J# -O http://neuroimage.usc.edu/bst/getupdate.php?c=UbsM09  && \
     mkdir ./install && \
-    #unzip -q -d ./install brainstorm_${APP_VERSION}.zip && \
-    #rm -rf brainstormi_${APP_VERSION}.zip
-    unzip -q -d ./install brainstorm_*.zip && \
-    rm brainstorm_*.zip && \
+    unzip -q -d ./install bst_bin_R2021a_${APP_VERSION}.zip && \
+    rm -rf bst_bin_R2021a_${APP_VERSION}.zip && \
+    #unzip -q -d ./install brainstorm_*.zip && \
+    #rm brainstorm_*.zip && \
     apt-get remove -y --purge curl unzip && \
     apt-get autoremove -y --purge && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
 ENV APP_SHELL="no"
-ENV APP_CMD="/apps/${APP_NAME}/install/brainstorm3/bin/R2020a/brainstorm3.command /usr/local/MATLAB/MATLAB_Runtime/v98"
+ENV APP_CMD="/apps/${APP_NAME}/install/brainstorm3/bin/R2021a/brainstorm3.command /usr/local/MATLAB/MATLAB_Runtime/v910"
 ENV PROCESS_NAME="brainstorm3.jar"
 ENV APP_DATA_DIR_ARRAY="brainstorm_db .brainstorm"
 #ENV APP_DATA_DIR_ARRAY="brainstorm_db .brainstorm .mcrCache9.8"
