@@ -16,13 +16,14 @@ RUN apt-get update && \
     apt-get upgrade -y && \
     apt-get install --no-install-recommends -y \ 
     curl unzip default-jre && \
-    #curl -J -O https://neuroimage.usc.edu/bst/download.php?file=brainstorm_${APP_VERSION}.zip && \
-    curl -J -O http://neuroimage.usc.edu/bst/getupdate.php?c=UbsM09  && \
-    mkdir ./install && \
-    #unzip -q -d ./install brainstorm_${APP_VERSION}.zip && \
-    #rm -rf brainstormi_${APP_VERSION}.zip
-    unzip -q -d ./install brainstorm_*.zip && \
-    rm brainstorm_*.zip && \
+    #curl -J# -O http://neuroimage.usc.edu/bst/getupdate.php?d=bst_bin_R2021a_${APP_VERSION}.zip && \
+    curl -J# -O "http://neuroimage.usc.edu/bst/getupdate.php?c=UbsM09&src=0&bin=1" && \
+    #curl -J# -O http://neuroimage.usc.edu/bst/getupdate.php?c=UbsM09 && \
+    mkdir ./install && \ 
+    #unzip -q -d ./install bst_bin_R2021a_${APP_VERSION}.zip && \
+    #rm -rf bst_bin_R2021a_${APP_VERSION}.zip && \
+    unzip -q -d ./install brainstorm_*_bin.zip && \
+    rm brainstorm_*_bin.zip && \
     apt-get remove -y --purge curl unzip && \
     apt-get autoremove -y --purge && \
     apt-get clean && \
