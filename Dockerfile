@@ -1,6 +1,6 @@
 ARG CI_REGISTRY_IMAGE
 ARG TAG
-FROM ${CI_REGISTRY_IMAGE}/matlab-runtime:R2020a_u7${TAG}
+FROM ${CI_REGISTRY_IMAGE}/matlab-runtime:R2022b_u5${TAG}
 LABEL maintainer="nathalie.casati@chuv.ch"
 
 ARG DEBIAN_FRONTEND=noninteractive
@@ -32,7 +32,7 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 ENV APP_SPECIAL="no"
-ENV APP_CMD="/apps/${APP_NAME}/install/brainstorm3/bin/R2020a/brainstorm3.command /usr/local/MATLAB/MATLAB_Runtime/v98"
+ENV APP_CMD="/apps/${APP_NAME}/install/brainstorm3/bin/R2022b/brainstorm3.command /usr/local/MATLAB/MATLAB_Runtime/R2022b"
 ENV PROCESS_NAME="brainstorm3.jar"
 ENV APP_DATA_DIR_ARRAY="brainstorm_db .brainstorm"
 #ENV APP_DATA_DIR_ARRAY="brainstorm_db .brainstorm .mcrCache9.8"
