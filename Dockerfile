@@ -16,12 +16,12 @@ WORKDIR /apps/${APP_NAME}
 
 RUN apt-get update && \
     apt-get upgrade -y && \
-    apt-get install --no-install-recommends -y \ 
+    apt-get install --no-install-recommends -y \
     curl unzip default-jre && \
     #curl -sSJ -O http://neuroimage.usc.edu/bst/getupdate.php?d=bst_bin_R2021a_${APP_VERSION}.zip && \
     curl -sSJ -O "http://neuroimage.usc.edu/bst/getupdate.php?c=UbsM09&src=0&bin=1" && \
     #curl -sSJ -O http://neuroimage.usc.edu/bst/getupdate.php?c=UbsM09 && \
-    mkdir ./install && \ 
+    mkdir ./install && \
     #unzip -q -d ./install bst_bin_R2021a_${APP_VERSION}.zip && \
     #rm -rf bst_bin_R2021a_${APP_VERSION}.zip && \
     unzip -q -d ./install brainstorm_*_bin.zip && \
