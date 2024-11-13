@@ -1,6 +1,6 @@
 ARG CI_REGISTRY_IMAGE
 ARG TAG
-FROM ${CI_REGISTRY_IMAGE}/matlab-runtime:R2022b_u5${TAG}
+FROM ${CI_REGISTRY_IMAGE}/matlab-runtime:R2023a_u7${TAG}
 LABEL maintainer="nathalie.casati@chuv.ch"
 
 ARG DEBIAN_FRONTEND=noninteractive
