@@ -26,6 +26,8 @@ RUN apt-get update && \
     #rm -rf bst_bin_R2021a_${APP_VERSION}.zip && \
     unzip -q -d ./install brainstorm_*_bin.zip && \
     rm brainstorm_*_bin.zip && \
+    # fix due to file permissions issue starting 251001 \
+    chmod 755 install/brainstorm3/bin/R2023a/brainstorm3.jar && \
     apt-get remove -y --purge curl unzip && \
     apt-get autoremove -y --purge && \
     apt-get clean && \
